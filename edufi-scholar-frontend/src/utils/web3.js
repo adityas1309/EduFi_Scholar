@@ -317,3 +317,4 @@ export const getEthereumContract = async () => {
   
   return new ethers.Contract(scholarshipContractAddress, scholarshipABI, signer);
 };
+

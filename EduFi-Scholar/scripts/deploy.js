@@ -10,6 +10,10 @@ async function main() {
     
     await studentLoan.waitForDeployment();
 
+    const ScholarshipManager = await ethers.getContractFactory("ScholarshipManager");
+    const contract = await ScholarshipManager.deploy();
+    console.log("Contract deployed to:", contract.address);
+
     
     console.log(`StudentLoan contract deployed at: ${studentLoan.target}`);
 }
