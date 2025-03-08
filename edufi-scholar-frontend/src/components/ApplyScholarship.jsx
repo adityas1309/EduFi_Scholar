@@ -1,47 +1,29 @@
 import { useState } from "react";
 import { getEthereumContract } from "../utils/web3";
+import { ethers } from "ethers";
 
-function CreateScholarship() {
-    const [name, setName] = useState("");
-    const [amount, setAmount] = useState("");
 
-    const createScholarship = async () => {
+function ApplyScholarship() {
+    const [scholarshipId, setScholarshipId] = useState("");
+
+    const applyForScholarship = async () => {
         try {
             const contract = await getEthereumContract();
-            if (!contract) {
-                alert("Contract not available!");
-                return;
-            }
-
-            const tx = await contract.createScholarship(name, amount);
+            const tx = await contract.applyForScholarship(scholarshipId, window.ethereum.selectedAddress);
             await tx.wait();
-
-            alert("Scholarship Created!");
-            setName("");
-            setAmount("");
+            alert("Application successful!");
         } catch (error) {
-            console.error("Error creating scholarship:", error);
+            console.error("Error applying:", error);
         }
     };
 
     return (
         <div>
-            <h2>Create Scholarship</h2>
-            <input
-                type="text"
-                placeholder="Scholarship Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
-            <input
-                type="number"
-                placeholder="Amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-            />
-            <button onClick={createScholarship}>Create</button>
+            <h2>Apply for Scholarship</h2>
+            <input type="text" placeholder="Scholarship ID" value={scholarshipId} onChange={(e) => setScholarshipId(e.target.value)} />
+            <button onClick={applyForScholarship}>Apply</button>
         </div>
     );
 }
 
-export default CreateScholarship;
+export default ApplyScholarship;

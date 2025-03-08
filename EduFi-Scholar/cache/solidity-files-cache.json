@@ -150,8 +150,8 @@
       ]
     },
     "C:\\Users\\singh\\Downloads\\EDUCHAIN\\EduFi-Scholar\\contracts\\Scholarship.sol": {
-      "lastModificationDate": 1741366914871,
-      "contentHash": "cbc99b918435189599f6f0336887cce7",
+      "lastModificationDate": 1741430152030,
+      "contentHash": "1a13af35d7425fb911e471ed43e23831",
       "sourceName": "contracts/Scholarship.sol",
       "solcConfig": {
         "version": "0.8.20",
