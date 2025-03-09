@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 
 
-export const scholarshipContractAddress = "0xBa05a8FFf266C8270E759e6E3d8BF5EeAe57D685"; 
+export const scholarshipContractAddress = "0xc59366B3B782604F73d71E171A2601993666B7b5"; 
 
 
 export const scholarshipABI = [
